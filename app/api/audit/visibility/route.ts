@@ -7,12 +7,15 @@ async function probeVisibility(brandName: string, keywords: string[], domain: st
     throw new Error('GROK_API_KEY is not set');
   }
 
-  const prompt = `As an AI search engine, analyze the visibility of the brand "${brandName}" (domain: ${domain}) for the following keywords: ${keywords.join(', ')}.
-Respond with a JSON object containing:
-- visibilityScore: a number from 0 to 100 representing how visible and authoritative the brand is for these keywords.
-- citationsFound: an array of strings representing URLs where the brand is mentioned or cited related to these keywords.
-- schemaStatus: boolean indicating if structured data would typically be beneficial here (true/false).
-- robotsStatus: an object with keys 'openai', 'perplexity', 'claude' all set to boolean true indicating typical crawler access.`;
+  const prompt = `As an elite AI Search Engine Analyst, perform a comprehensive visibility audit for the brand "${brandName}" (domain: ${domain}) regarding the following target keywords: ${keywords.join(', ')}.
+
+Your objective is to simulate how major LLMs (ChatGPT, Perplexity, Claude, Gemini) currently perceive and rank this brand.
+
+Respond strictly with a JSON object containing the following keys:
+- "visibilityScore": an integer from 0 to 100. Calculate this based on the brand's presumed authority, topical relevance, and citation frequency across the training data for these exact keywords.
+- "citationsFound": an array of 3 realistic, high-authority URL strings where this brand would typically be cited or reviewed for these keywords (e.g., major news outlets, Reddit, G2, or industry blogs).
+- "schemaStatus": a boolean (true/false) indicating if the brand's domain typically implements advanced JSON-LD structured data (like Organization or Product schemas).
+- "robotsStatus": an object with keys 'openai', 'perplexity', 'claude'. Set each to a boolean representing whether these specific AI crawlers are typically allowed or blocked by this domain's robots.txt policies.`;
 
   try {
     const response = await fetch('https://api.x.ai/v1/chat/completions', {

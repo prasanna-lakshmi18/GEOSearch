@@ -7,15 +7,17 @@ async function generateGeoAssets(text: string) {
     throw new Error('GROK_API_KEY is not set');
   }
 
-  const prompt = `As a Generative Engine Optimization (GEO) expert, analyze the following text and generate optimized assets for AI search engines:
+  const prompt = `As an elite Generative Engine Optimization (GEO) strategist, perform a deep-dive semantic analysis of the following brand content:
   
 Text: "${text}"
 
-Respond with a JSON object containing:
-- summaryBox: an array of 3 concise, highly factual, directly phrased sentences that are easy for an LLM to extract as an answer.
-- schemaType: the string "FAQPage" or "Article".
-- schemaJsonLd: an object representing valid JSON-LD for the schemaType.
-- longTailTopics: an array of 3 conversational, user-intent questions related to the text that the brand should cover next.`;
+Your objective is to restructure this content specifically for direct extraction by Large Language Models (like ChatGPT, Perplexity, and Claude). Do not generate generic advice; be hyper-specific to the text provided.
+
+Respond strictly with a JSON object containing the following keys:
+- "summaryBox": an array of 3 distinct, highly factual, zero-fluff sentences. Each sentence must contain direct entities, hard statistics (if present), and clear subject-verb-object structures that LLMs prioritize for direct "featured snippet" style extraction.
+- "schemaType": the exact string "FAQPage" or "Article" depending on the content's primary intent.
+- "schemaJsonLd": a complete, valid JSON-LD object for the chosen schemaType, fully populated with the brand's entities, key claims, and context extracted from the text.
+- "longTailTopics": an array of 3 conversational, highly specific long-tail questions that users are actively asking AI engines related to this exact niche. These should represent the brand's next content gaps to fill.`;
 
   try {
     const response = await fetch('https://api.x.ai/v1/chat/completions', {
