@@ -1,8 +1,22 @@
 # GEO-Pulse: Generative Engine Optimization Agent
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-geo--search--nu.vercel.app-blue?style=for-the-badge)](https://geo-search-nu.vercel.app/audit)
+
 GEO-Pulse is a lightweight, production-ready web application designed to audit and boost brand visibility across AI search engines (ChatGPT, Perplexity, Gemini, Claude, and Grok). 
 
 As traditional SEO shifts toward **Generative Engine Optimization (GEO)**, brands must ensure their content is structured properly for Large Language Models (LLMs) to extract and cite. GEO-Pulse automates this entire process.
+
+---
+
+## 📸 Screenshots
+
+*(Auto-generated live previews of the application)*
+
+### Audit Runner
+![Audit Runner Screenshot](https://image.thum.io/get/width/1200/crop/800/https://geo-search-nu.vercel.app/audit)
+
+### Actionable Report & Dashboard
+![Report Screenshot](https://image.thum.io/get/width/1200/crop/800/https://geo-search-nu.vercel.app/audit/a1)
 
 ---
 
